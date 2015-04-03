@@ -5,7 +5,13 @@ public partial class MainWindow
 {
 	private global::Gtk.Notebook notebook1;
 	
-	private global::Gtk.Fixed fixed2;
+	private global::Gtk.VBox vbox1;
+	
+	private global::Gtk.HBox hbox2;
+	
+	private global::Gtk.Image image6;
+	
+	private global::Gtk.Button button2;
 	
 	private global::Gtk.Label QuotesTab;
 	
@@ -17,6 +23,7 @@ public partial class MainWindow
 		// Widget MainWindow
 		this.Name = "MainWindow";
 		this.Title = global::Mono.Unix.Catalog.GetString ("Chuck Norris");
+		this.Icon = global::Stetic.IconLoader.LoadIcon (this, "gtk-floppy", global::Gtk.IconSize.Menu);
 		this.WindowPosition = ((global::Gtk.WindowPosition)(4));
 		this.DefaultWidth = 1000;
 		this.DefaultHeight = 500;
@@ -26,26 +33,53 @@ public partial class MainWindow
 		this.notebook1.Name = "notebook1";
 		this.notebook1.CurrentPage = 0;
 		// Container child notebook1.Gtk.Notebook+NotebookChild
-		this.fixed2 = new global::Gtk.Fixed ();
-		this.fixed2.Name = "fixed2";
-		this.fixed2.HasWindow = false;
-		this.notebook1.Add (this.fixed2);
-		global::Gtk.Notebook.NotebookChild w1 = ((global::Gtk.Notebook.NotebookChild)(this.notebook1 [this.fixed2]));
-		w1.TabFill = false;
+		this.vbox1 = new global::Gtk.VBox ();
+		this.vbox1.Name = "vbox1";
+		this.vbox1.Spacing = 6;
+		// Container child vbox1.Gtk.Box+BoxChild
+		this.hbox2 = new global::Gtk.HBox ();
+		this.hbox2.Name = "hbox2";
+		this.hbox2.Homogeneous = true;
+		this.hbox2.Spacing = 6;
+		// Container child hbox2.Gtk.Box+BoxChild
+		this.image6 = new global::Gtk.Image ();
+		this.image6.Name = "image6";
+		this.hbox2.Add (this.image6);
+		global::Gtk.Box.BoxChild w1 = ((global::Gtk.Box.BoxChild)(this.hbox2 [this.image6]));
+		w1.Position = 0;
+		w1.Expand = false;
+		w1.Fill = false;
+		// Container child hbox2.Gtk.Box+BoxChild
+		this.button2 = new global::Gtk.Button ();
+		this.button2.CanFocus = true;
+		this.button2.Name = "button2";
+		this.button2.UseUnderline = true;
+		this.button2.Label = global::Mono.Unix.Catalog.GetString ("Next Quote");
+		this.hbox2.Add (this.button2);
+		global::Gtk.Box.BoxChild w2 = ((global::Gtk.Box.BoxChild)(this.hbox2 [this.button2]));
+		w2.Position = 1;
+		w2.Expand = false;
+		w2.Fill = false;
+		this.vbox1.Add (this.hbox2);
+		global::Gtk.Box.BoxChild w3 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.hbox2]));
+		w3.Position = 0;
+		w3.Expand = false;
+		w3.Fill = false;
+		this.notebook1.Add (this.vbox1);
 		// Notebook tab
 		this.QuotesTab = new global::Gtk.Label ();
 		this.QuotesTab.Name = "QuotesTab";
 		this.QuotesTab.LabelProp = global::Mono.Unix.Catalog.GetString ("Quotes");
-		this.notebook1.SetTabLabel (this.fixed2, this.QuotesTab);
+		this.notebook1.SetTabLabel (this.vbox1, this.QuotesTab);
 		this.QuotesTab.ShowAll ();
 		// Notebook tab
-		global::Gtk.Label w2 = new global::Gtk.Label ();
-		w2.Visible = true;
-		this.notebook1.Add (w2);
+		global::Gtk.Label w5 = new global::Gtk.Label ();
+		w5.Visible = true;
+		this.notebook1.Add (w5);
 		this.GraphTab = new global::Gtk.Label ();
 		this.GraphTab.Name = "GraphTab";
 		this.GraphTab.LabelProp = global::Mono.Unix.Catalog.GetString ("Graph");
-		this.notebook1.SetTabLabel (w2, this.GraphTab);
+		this.notebook1.SetTabLabel (w5, this.GraphTab);
 		this.GraphTab.ShowAll ();
 		this.Add (this.notebook1);
 		if ((this.Child != null)) {
