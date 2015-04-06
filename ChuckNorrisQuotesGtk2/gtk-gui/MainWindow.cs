@@ -11,11 +11,11 @@ public partial class MainWindow
 	
 	private global::Gtk.Image image6;
 	
-	private global::Gtk.Button button2;
+	private global::Gtk.Button ButtonNextQuote;
+	
+	private global::Gtk.Label labelQuote;
 	
 	private global::Gtk.Label QuotesTab;
-	
-	private global::Gtk.Label GraphTab;
 
 	protected virtual void Build ()
 	{
@@ -50,13 +50,13 @@ public partial class MainWindow
 		w1.Expand = false;
 		w1.Fill = false;
 		// Container child hbox2.Gtk.Box+BoxChild
-		this.button2 = new global::Gtk.Button ();
-		this.button2.CanFocus = true;
-		this.button2.Name = "button2";
-		this.button2.UseUnderline = true;
-		this.button2.Label = global::Mono.Unix.Catalog.GetString ("Next Quote");
-		this.hbox2.Add (this.button2);
-		global::Gtk.Box.BoxChild w2 = ((global::Gtk.Box.BoxChild)(this.hbox2 [this.button2]));
+		this.ButtonNextQuote = new global::Gtk.Button ();
+		this.ButtonNextQuote.CanFocus = true;
+		this.ButtonNextQuote.Name = "ButtonNextQuote";
+		this.ButtonNextQuote.UseUnderline = true;
+		this.ButtonNextQuote.Label = global::Mono.Unix.Catalog.GetString ("Next Quote");
+		this.hbox2.Add (this.ButtonNextQuote);
+		global::Gtk.Box.BoxChild w2 = ((global::Gtk.Box.BoxChild)(this.hbox2 [this.ButtonNextQuote]));
 		w2.Position = 1;
 		w2.Expand = false;
 		w2.Fill = false;
@@ -65,6 +65,15 @@ public partial class MainWindow
 		w3.Position = 0;
 		w3.Expand = false;
 		w3.Fill = false;
+		// Container child vbox1.Gtk.Box+BoxChild
+		this.labelQuote = new global::Gtk.Label ();
+		this.labelQuote.Name = "labelQuote";
+		this.labelQuote.LabelProp = global::Mono.Unix.Catalog.GetString ("Quote Here...");
+		this.vbox1.Add (this.labelQuote);
+		global::Gtk.Box.BoxChild w4 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.labelQuote]));
+		w4.Position = 1;
+		w4.Expand = false;
+		w4.Fill = false;
 		this.notebook1.Add (this.vbox1);
 		// Notebook tab
 		this.QuotesTab = new global::Gtk.Label ();
@@ -72,20 +81,12 @@ public partial class MainWindow
 		this.QuotesTab.LabelProp = global::Mono.Unix.Catalog.GetString ("Quotes");
 		this.notebook1.SetTabLabel (this.vbox1, this.QuotesTab);
 		this.QuotesTab.ShowAll ();
-		// Notebook tab
-		global::Gtk.Label w5 = new global::Gtk.Label ();
-		w5.Visible = true;
-		this.notebook1.Add (w5);
-		this.GraphTab = new global::Gtk.Label ();
-		this.GraphTab.Name = "GraphTab";
-		this.GraphTab.LabelProp = global::Mono.Unix.Catalog.GetString ("Graph");
-		this.notebook1.SetTabLabel (w5, this.GraphTab);
-		this.GraphTab.ShowAll ();
 		this.Add (this.notebook1);
 		if ((this.Child != null)) {
 			this.Child.ShowAll ();
 		}
 		this.Show ();
 		this.DeleteEvent += new global::Gtk.DeleteEventHandler (this.OnDeleteEvent);
+		this.ButtonNextQuote.Clicked += new global::System.EventHandler (this.NextQuoteButtonClicked);
 	}
 }

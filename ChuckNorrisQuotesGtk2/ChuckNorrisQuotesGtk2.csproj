@@ -50,6 +50,12 @@
       <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Mono.Posix, Version=2.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756" />
+    <Reference Include="OxyPlot">
+      <HintPath>..\packages\OxyPlot.Core.2014.1.546\lib\portable-net4+sl4+wp71+win8\OxyPlot.dll</HintPath>
+    </Reference>
+    <Reference Include="OxyPlot.GtkSharp">
+      <HintPath>..\packages\OxyPlot.GtkSharp.2014.1.546\lib\net40\OxyPlot.GtkSharp.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="gtk-gui\gui.stetic">
@@ -69,5 +75,14 @@
       <DeployService-UseProjectRelativePath>True</DeployService-UseProjectRelativePath>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Visual Studio 2013\Projects\ChuckNorris\ChuckNorris\ChuckNorris.csproj">
+      <Project>{297F0D24-B0A1-4090-B80C-C5659A21A6DA}</Project>
+      <Name>ChuckNorris</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>

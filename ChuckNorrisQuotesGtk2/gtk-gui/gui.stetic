@@ -41,12 +41,13 @@
                   </packing>
                 </child>
                 <child>
-                  <widget class="Gtk.Button" id="button2">
+                  <widget class="Gtk.Button" id="ButtonNextQuote">
                     <property name="MemberName" />
                     <property name="CanFocus">True</property>
                     <property name="Type">TextOnly</property>
                     <property name="Label" translatable="yes">Next Quote</property>
                     <property name="UseUnderline">True</property>
+                    <signal name="Clicked" handler="NextQuoteButtonClicked" />
                   </widget>
                   <packing>
                     <property name="Position">1</property>
@@ -64,7 +65,16 @@
               </packing>
             </child>
             <child>
-              <placeholder />
+              <widget class="Gtk.Label" id="labelQuote">
+                <property name="MemberName" />
+                <property name="LabelProp" translatable="yes">Quote Here...</property>
+              </widget>
+              <packing>
+                <property name="Position">1</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+              </packing>
             </child>
           </widget>
         </child>
@@ -72,18 +82,6 @@
           <widget class="Gtk.Label" id="QuotesTab">
             <property name="MemberName" />
             <property name="LabelProp" translatable="yes">Quotes</property>
-          </widget>
-          <packing>
-            <property name="type">tab</property>
-          </packing>
-        </child>
-        <child>
-          <placeholder />
-        </child>
-        <child>
-          <widget class="Gtk.Label" id="GraphTab">
-            <property name="MemberName" />
-            <property name="LabelProp" translatable="yes">Graph</property>
           </widget>
           <packing>
             <property name="type">tab</property>
