@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -30,6 +30,9 @@
     <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ChuckNorris">
+      <HintPath>..\ChuckNorris.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="gtk-sharp, Version=2.4.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
       <SpecificVersion>False</SpecificVersion>
@@ -78,11 +81,5 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\Visual Studio 2013\Projects\ChuckNorris\ChuckNorris\ChuckNorris.csproj">
-      <Project>{297F0D24-B0A1-4090-B80C-C5659A21A6DA}</Project>
-      <Name>ChuckNorris</Name>
-    </ProjectReference>
   </ItemGroup>
 </Project>
