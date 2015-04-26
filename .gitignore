@@ -2,5 +2,7 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/ChuckNorrisQuotesGtk2/bin/Debug
-/ChuckNorrisQuotesGtk2/obj/x86/Debug
+/ChuckNorrisQuotesGtk2/bin/*
+/ChuckNorrisQuotesGtk2/obj/*
+*.suo
+*.userprefs
